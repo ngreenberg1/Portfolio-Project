@@ -17,35 +17,36 @@
   </head>
 
   <body>
-    <!-- Here is our main header that is used across all the pages of our website -->
+    <!-- Container for the entire page-->
+    <div class="page-container">
 
-    <header>
-      <h1>Portfolio</h1>
-    </header>
-    
-    <div class="flex-container">
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="Projects.html">Projects</a></li>
-        <li><a href="#" target="_blank">Resume</a></li>
-      </ul>
-    </nav>
-    </div>
+      <!-- Here is our main header that is used across all the pages of our website -->
+      <header>
+        <h1>Portfolio</h1>
+      </header>
+  
+      <nav id="nav-list">
+        <ul class="nav-menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="Projects.html">Projects</a></li>
+          <li><a href="#" target="_blank">Resume</a></li>
+        </ul>
+      </nav>
 
-    <!-- Here is our page's main content -->
-    <main>
-      <!-- It contains an article -->
-      <article>
-        <h2>About Me</h2>
-        <address>
-            Naomi Greenberg<br> 
-            <a href="mailto:ngreenberg@luc.edu" title="Contact Me">Ngreenberg@luc.edu</a><br>
-            Loyola University Chicago <br>
-            USA
-        </address>
-        
-        <img src="/Images/Portfolio3.jpg" alt="me" style="width:100%;" >
+      <!-- Here is our page's main content -->
+      <main class="main-content">
+        <!-- It contains an article -->
+        <article>
+          <h2>About Me</h2>
+            <address>
+              Naomi Greenberg<br> 
+              <a href="mailto:ngreenberg@luc.edu" title="Contact Me">Ngreenberg@luc.edu</a><br>
+              Loyola University Chicago <br>
+              USA
+            </address>
+            <img src="/Images/Portfolio3.jpg" alt="me" style="width:100%;" >
+
+
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam
           lectus. Set sit amet ipsum mauris. Maecenas congue ligula as quam
@@ -86,7 +87,7 @@
       </article>
 
       <!-- the aside content can also be nested within the main content -->
-      <aside>
+      <aside class="side-content">
         <h2>Interests/What I'm Reading</h2>
 
         <ul>
@@ -101,8 +102,8 @@
 
     <!-- And here is our main footer that is used across all the pages of our website -->
 
-    <footer>
-        <canvas id="myCanvas" width="300" height="100" style="border:1px solid #000000;"></canvas>
+    <footer class="page-footer">
+        <canvas id="myCanvas" width="300" height="100" style="border:1px solid #e0d5d5;"></canvas>
       <p>©Copyright 2050 by nobody. All rights reversed.</p>
     </footer>
   </body>
