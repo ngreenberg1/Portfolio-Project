@@ -53,16 +53,22 @@ h2, h3 {
     padding: 20px;
 }
 
-.main-article {
+.main-content article {
     flex: 1;
     margin-right: 20px;
 }
 
 .side-content {
-    flex: 1;
+    flex: 0.5;
+    margin-top: 200px; /* Add margin-top to create space between article and aside */
+    width: 100%; /* Set the width to take up the entire side of the page */
 }
 
 .page-footer {
     text-align: center;
     padding: 10px;
+}
+
+ul li {
+    padding: 2px;
 }
