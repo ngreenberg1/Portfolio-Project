@@ -1,12 +1,21 @@
-const canvas = document.getElementById("myCanvas");
-const ctx = canvas.getContext("2d");
+// Get the modal
+//var modal = document.getElementById("myModal");
 
-const image = new Image();
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+//var img = document.getElementById("myImg");
+//var modalImg = document.getElementById("img01");
+//var captionText = document.getElementById("caption");
 
-image.onload = function() {
-    // Once the image is loaded, draw it on the canvas
-    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-};
+//img.onclick = function(){
+//  modal.style.display = "block";
+//  modalImg.src = this.href;
+//  captionText.innerHTML = this.getAttribute("alt");
+//}
 
-// Set the image source to the path of your image
-image.src = '/Images/Portfolio3.jpg';
+// Get the <span> element that closes the modal
+//var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+//span.onclick = function() { 
+//  modal.style.display = "none";
+//}

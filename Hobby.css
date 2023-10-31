@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.photo-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* Adjust the gap between images */
+    justify-content: center;
+}
+
+.photo-list li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.photo-list img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.photo-list p {
+    padding: 10px;
+}
