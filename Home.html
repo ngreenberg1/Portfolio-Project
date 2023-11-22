@@ -2,6 +2,7 @@
 <html lang="en-US">
   <head>
     <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <meta charset="utf-8" />
     <meta name="author" content="Naomi Greenberg and Ricardo Cordova" />
     <meta name="keywords" content="HTML, CSS, JavaScript">
@@ -17,67 +18,51 @@
   </head>
 
   <body>
-    <!-- Container for the entire page-->
-    <div class="page-container">
-
-      <!-- Here is our main header that is used across all the pages of our website -->
-      <header>
-        <h1>Portfolio</h1>
-      </header>
-  
-      <nav id="nav-list">
-        <ul class="nav-menu">
-          <li><a href="Home.html">Home</a></li>
-          <li><a href="Projects.html">Projects</a></li>
-          <li><a href="Images/generic_resume.pdf" target="_blank">Resume</a></li>
-        </ul>
-      </nav>
-
-      <!-- Here is our page's main content -->
-      <main class="main-content">
-        <!-- It contains an article -->
-        <article>
-          <h2>About Me</h2>
-            <address>
-              Naomi Greenberg<br> 
-              <a href="mailto:ngreenberg@luc.edu" title="Contact Me">Ngreenberg@luc.edu</a><br>
-              Loyola University Chicago <br>
-              USA
-            </address>
-            <img src="/Images/Portfolio3.jpg" alt="me" style="width:50%;" >
-
-
-        <p>
-          I love bikes. I love riding bikes.  I love fixing bikes.  Everybody
-          should ride a bike.  If you don't have a bike, I can help you get a bike.
-          If you have a bike, I can help you fix your bike. 
-        </p>
-
-        <h3>Education</h3>
-
-        <p>
-          Many years of fixing and riding my own bike.
-        </p>
-
-        <p>
-          Two years of working at a bike shop, and fixing 
-          customer's bikes.  Under the tutelage of Alfredo Ruvalcaba,
-          lead mechanic.  
-        </p>
-
-        <h3>Skills</h3>
-
-        <p>
-          I can fix bikes.  I can race bikes.  I can ride bikes for fun.  
-          I can recommend you a bike. I can build bikes and I can take apart bikes.
-        </p>
-
-        <p>
-          I also can write code.  I have experience with Java, Python, HTML, CSS, and JS, and more.  
-        </p>
-      </article>
-
-      <!-- the aside content can also be nested within the main content -->
+    <div class="container">
+      <section class="one" id="home">
+        <header>
+          <div class="header-container">
+            <div class="logo">
+              <h1><a href="Home.html">Naomi E. Greenberg</a></h1>
+              <h2>COMPUTER SCIENCE STUDENT - BIKE AFFICIANADO</h2>
+            </div>
+            <nav class="topnav" id="myTopnav">
+                <a href="#About">About Me</a>
+                <a href="#Resume">Resume</a>
+                <div class="dropdown">
+                  <button class="dropbtn">Projects
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="#">Bicycle Image Map</a>
+                    <a href="#">Bicycle Recommender</a>
+                    <a href="#">Machine Learning Research</a>
+                  </div>
+                </div>
+                <div class="social-media-icons">
+                  <a href="#" class="icon-link"><i class="fab fa-linkedin"></i></a>
+                  <a href="#" class="icon-link"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="icon-link"><i class="fab fa-github"></i></a>
+                  <a href="#" class="icon-link"><i class="far fa-envelope"></i></a>
+                </div>  
+                <a href="javascript:void(0)" class="icon" onclick="toggleMenu()">&#9776;</a>    
+            </nav>
+          </div>
+        </header>
+        <main class="main-content">
+          <!-- It contains an article -->
+          <article>
+              <div class="profile-container">
+                <img src="/Images/PortfolioNoBackground.png" alt="me" style="width: 80%;">
+                <h1>Welcome to my profile page!</h1>
+              </div>
+          <p>
+            I love bikes. I love riding bikes.  I love fixing bikes.  Everybody
+            should ride a bike.  If you don't have a bike, I can help you get a bike.
+            If you have a bike, I can help you fix your bike. 
+          </p>
+        </article>
+          <!-- the aside content can also be nested within the main content -->
       <aside class="side-content">
         <h2>Interests/What I'm Reading</h2>
 
@@ -87,25 +72,131 @@
           <li><a href="https://www.pilsencommunitybooks.com/item/rBSsMLeAZlZgLaHbv2BzYg" target="_blank"><cite>The Body Keeps The Score</cite> by Bessel Van Der Kolk, M.D.</a></li>
           <li><a href="https://www.pilsencommunitybooks.com/item/9JsuMsJ9TCIH26oKP3B_Gw" target="_blank"><cite>How to Do Nothing: Resisting the Attention Economy</cite> by Jenny Odell</a></li>
           <li><a href="https://www.pilsencommunitybooks.com/item/tUmOish_vI_bnz8l9p6Ymg" target="_blank">Cooking</a></li>
-        </ul>
-
-        <!-- attempting to make the rockclimbing pics appear in a modal
-        <div id="myModal" class="modal">
-          <span class="close">&times;</span>
-          <img class="modal-content" id="img01">
-          <div id="caption"></div>
-        </div> 
-        -->
-        
+        </ul>   
       </aside>
-    </main>
-
+      </main>
     <!-- And here is our main footer that is used across all the pages of our website 
     TODO: Draw something fun in the canvas-->
+          
+      <footer class="page-footer">
+        <div class="scrolldown">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </footer>  
+      </section>
 
-    <footer class="page-footer">
-        <canvas id="myCanvas" width="300" height="100" style="border:1px solid #e0d5d5;"></canvas>
-      <p>©Copyright 2050 by nobody. All rights reversed.</p>
-    </footer>
+      
+      <section class="two" id="about">
+        <header>
+          <div class="header-container">
+            <div class="logo">
+              <h1><a href="#home">Naomi E. Greenberg</a></h1>
+              <h2>COMPUTER SCIENCE STUDENT - BIKE AFFICIANADO</h2>
+            </div>
+            <nav class="topnav" id="myTopnav">
+                <a href="#about">About Me</a>
+                <a href="#resume">Resume</a>
+                <div class="dropdown">
+                  <button class="dropbtn">Projects
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="#">Bicycle Image Map</a>
+                    <a href="#">Bicycle Recommender</a>
+                    <a href="#">Machine Learning Research</a>
+                  </div>
+                </div>
+                <div class="social-media-icons">
+                  <a href="#" class="icon-link"><i class="fab fa-linkedin"></i></a>
+                  <a href="#" class="icon-link"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="icon-link"><i class="fab fa-github"></i></a>
+                  <a href="#" class="icon-link"><i class="far fa-envelope"></i></a>
+                </div>  
+                <a href="javascript:void(0)" class="icon" onclick="toggleMenu()">&#9776;</a>    
+            </nav>
+          </div>
+        </header>
+        <div class="scrolldown">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </section>
+      <section class="three" id="resume">
+        <header>
+          <div class="header-container">
+            <div class="logo">
+              <h1><a href="#home">Naomi E. Greenberg</a></h1>
+              <h2>COMPUTER SCIENCE STUDENT - BIKE AFFICIANADO</h2>
+            </div>
+            <nav class="topnav" id="myTopnav">
+                <a href="#about">About Me</a>
+                <a href="#resume">Resume</a>
+                <div class="dropdown">
+                  <button class="dropbtn">Projects
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="#">Bicycle Image Map</a>
+                    <a href="#">Bicycle Recommender</a>
+                    <a href="#">Machine Learning Research</a>
+                  </div>
+                </div>
+                <div class="social-media-icons">
+                  <a href="#" class="icon-link"><i class="fab fa-linkedin"></i></a>
+                  <a href="#" class="icon-link"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="icon-link"><i class="fab fa-github"></i></a>
+                  <a href="#" class="icon-link"><i class="far fa-envelope"></i></a>
+                </div>  
+                <a href="javascript:void(0)" class="icon" onclick="toggleMenu()">&#9776;</a>    
+            </nav>
+          </div>
+        </header>
+        <div class="scrolldown">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </section>
+      <section class="four" id="projects">
+        <header>
+          <div class="header-container">
+            <div class="logo">
+              <h1><a href="#home">Naomi E. Greenberg</a></h1>
+              <h2>COMPUTER SCIENCE STUDENT - BIKE AFFICIANADO</h2>
+            </div>
+            <nav class="topnav" id="myTopnav">
+                <a href="#about">About Me</a>
+                <a href="#resume">Resume</a>
+                <div class="dropdown">
+                  <button class="dropbtn">Projects
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="#">Bicycle Image Map</a>
+                    <a href="#">Bicycle Recommender</a>
+                    <a href="#">Machine Learning Research</a>
+                  </div>
+                </div>
+                <div class="social-media-icons">
+                  <a href="#" class="icon-link"><i class="fab fa-linkedin"></i></a>
+                  <a href="#" class="icon-link"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="icon-link"><i class="fab fa-github"></i></a>
+                  <a href="#" class="icon-link"><i class="far fa-envelope"></i></a>
+                </div>  
+                <a href="javascript:void(0)" class="icon" onclick="toggleMenu()">&#9776;</a>    
+            </nav>
+          </div>
+        </header>
+      </section>
+    </div>
+    
+    
+    
+  
+
+      
   </body>
 </html>
