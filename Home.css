@@ -17,6 +17,7 @@ body {
 section {
     height: 100vh;
     scroll-snap-align: start;
+    position: relative;
 }
 
 .one {
@@ -85,7 +86,8 @@ section {
     text-shadow: 1px 1px 4px #000;
 
 }
-  
+
+
 .topnav a {
     float: left;
     display: block;
@@ -162,80 +164,6 @@ section {
     align-items: center;
 }
 
-.scrolldown {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    width: 40px;
-    height: 40px;
-    z-index: 999;
-    transform: translateY(-80px) translateX(-50%) rotate(45deg);
-} 
-  
-.scrolldown span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-bottom: 2px solid #fff;
-    border-right: 2px solid #fff;
-    animation: animate 1.5s linear infinite;
-    opacity: 0;
-
-}
-
-.scrolldown span:nth-child(1) {
-    transform: translate(-15px, -15px);
-    animation-delay: -0.4s;
-}
-
-.scrolldown span:nth-child(2) {
-    transform: translate(0, 0);
-    animation-delay: -0.2s;
-}
-
-.scrolldown span:nth-child(3) {
-    transform: translate(15px, 15px);
-    animation-delay: 0s;
-}
-
-sectiion:not(.four) .scrolldown span {
-    display: block;
-}
-
-.four .scrolldown span {
-    display: none; /* Hide the scroll animation in the fourth section */
-}
-
-@keyframes animate {
-    0%
-    {
-       top: -5px;
-       left: -5px;
-       opacity: 0; 
-    }
-    25%
-    {
-       top: 0px;
-       left: 0px;
-       opacity: 1; 
-    }
-    50%
-    {
-       top: 5px;
-       left: 5px;
-       opacity: 1; 
-    }
-    100%
-    {
-       top: 10px;
-       left: 10px;
-       opacity: 0; 
-    }
-}
-
 .profile-container {
     display: flex;
     flex-direction: column;
@@ -249,6 +177,50 @@ sectiion:not(.four) .scrolldown span {
     max-width: 600px; /* Set a maximum width to maintain clarity on larger screens */
 }
 
+.arrows-body {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 5%;
+   
+}
+
+.arrow {
+    position: absolute;
+    bottom: 50px;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    transform: rotate(45deg);
+    margin: -5px;
+    animation: scroll 1.5s infinite;
+}
+
+.arrow:nth-child(2) {
+    animation-delay: -.2s;
+}
+.arrow:nth-child(3) {
+    animation-delay: -.4s;
+}
+
+@keyframes scroll{
+    0% {
+        opacity: 1;
+        transform: rotate(45deg) translateY(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
+
+
 @media screen and (max-width: 800px) {
     .header-container {
         margin-top: 0px;
@@ -257,7 +229,7 @@ sectiion:not(.four) .scrolldown span {
         margin-top: 0px;
     }
     .topnav.responsive {
-        position: absolute;
+        position: fixed;
         width: 100vw;
         height: 100vh;
         z-index: 9999;
