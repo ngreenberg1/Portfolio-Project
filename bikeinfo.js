@@ -48,14 +48,45 @@ function closeMenu() {
 
 //# sourceMappingURL=imageMapResizer.map
 
+var debounceTimer;
+var isInArea = false;
+var modalIsOpen = false;
+
+// Define the functions in the global scope
 function openModal(content) {
-    var modal = document.getElementById('myModal');
-    var modalText = document.getElementById('modalText');
-    modal.style.display = 'block';
-    modalText.innerHTML = content;
+    clearTimeout(debounceTimer);
+        if (isInArea && !modalIsOpen) { // Check if mouse is in area and modal is not open
+            var modal = document.getElementById('myModal');
+            var modalText = document.getElementById('modalText');
+            modal.style.display = 'block';
+            modalText.innerHTML = content;
+            modalIsOpen = true; // Update modal state
+        }
 }
   
-  function closeModal() {
-    var modal = document.getElementById('myModal');
-    modal.style.display = 'none';
+function closeModal() {
+    debounceTimer = setTimeout(function() {
+        if (!isInArea && modalIsOpen) { // Check if mouse is not in area and modal is open
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'none';
+            modalIsOpen = false; // Update modal state
+        } 
+    }, 200); 
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Event listeners for mouse entering and leaving the area
+    var area = document.querySelector('area');
+
+    area.addEventListener('mouseenter', function() {
+        console.log('Mouse entered area');
+        isInArea = true;
+        openModal('Modal Content 1');
+    });
+
+    area.addEventListener('mouseleave', function() {
+        console.log('Mouse left area');
+        isInArea = false;
+        closeModal();
+    });
+});
