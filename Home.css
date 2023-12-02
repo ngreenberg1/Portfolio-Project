@@ -71,6 +71,8 @@ section {
     white-space: nowrap;
     color: white;
 }
+
+
   
 /* Adjust spacing between logo and subtitle */
 .logo h2 {
@@ -78,6 +80,11 @@ section {
     font-size: 70%
 }
   
+.logo:hover {
+    color: black;   
+    text-shadow: none;
+}
+
 .topnav {
     overflow: hidden;
     background-color: 0;
@@ -104,7 +111,12 @@ section {
     display: none;
     font-size: 40px;
 }
-  
+/* Hide the 'x' icon initially */
+.close-icon {
+    display: none;
+    /* Add necessary styles for the 'x' icon */
+}
+
 .dropdown {
     float: left;
     overflow: hidden;
@@ -173,8 +185,11 @@ section {
 
 .profile-container img {
     max-width: 100%; /* Image won't exceed its original size */
-    width: 1000vw; /* Adjust the initial width as per your design */
+    width: 100%; /* Adjust the initial width as per your design */
     max-width: 600px; /* Set a maximum width to maintain clarity on larger screens */
+    margin-left: -40px;
+    display: block;
+    margin-bottom: 15px;
 }
 
 .arrows-body {
@@ -228,6 +243,7 @@ section {
     .logo .a {
         margin-top: 0px;
     }
+
     .topnav.responsive {
         position: fixed;
         width: 100vw;
