@@ -1,12 +1,20 @@
 //function to toggle menu when hamburger icon is clicked
 function toggleMenu() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
+    var menu = document.getElementById("myTopnav");
+    if (menu.className === "topnav") {
+      menu.className += " responsive";
     } else {
-      x.className = "topnav";
+      menu.className = "topnav";
     }
     
+}
+
+//function to close menu after a menu item is clicked
+function closeMenu() {
+    var menu = document.getElementById("myTopnav");
+    if (menu.className.includes("responsive")) {
+      menu.className = "topnav";
+    }
 }
 
 
