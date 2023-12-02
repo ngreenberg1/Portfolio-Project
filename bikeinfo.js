@@ -17,35 +17,6 @@ function closeMenu() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-
-    // Get the image and overlay elements
-    const image = document.getElementById('image');
-    const overlay = document.getElementById('overlay');
-
-    // Function to add overlays for each area in the image map
-    function addAreaOverlays() {
-        const areas = document.querySelectorAll('map[name="your-map"] area');
-        areas.forEach((area) => {
-            const coords = area.getAttribute('coords').split(',');
-            const polygon = document.createElement('div');
-            polygon.classList.add('overlay-area');
-            polygon.style.position = 'absolute';
-            polygon.style.top = coords[1] + 'px';
-            polygon.style.left = coords[0] + 'px';
-            polygon.style.width = (coords[2] - coords[0]) + 'px';
-            polygon.style.height = (coords[5] - coords[3]) + 'px';
-            polygon.style.opacity = '0.5'; // Adjust opacity as needed
-            polygon.style.backgroundColor = 'red'; // Change color as needed
-            overlay.appendChild(polygon);
-        });
-    }
-
-    // Call the function when the image is loaded
-    image.onload = addAreaOverlays;
-
-});
-
 /*! Image Map Resizer (imageMapResizer.min.js ) - v1.0.10 - 2019-04-10
  *  Desc: Resize HTML imageMap to scaled image.
  *  Copyright: (c) 2019 David J. Bradshaw - dave@bradshaw.net
@@ -76,3 +47,15 @@ document.addEventListener('DOMContentLoaded', function() {
             break;case"object":t(e);break;default:throw new TypeError("Unexpected data type ("+typeof e+").")}return n}}"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&"object"==typeof module.exports?module.exports=e():window.imageMapResize=e(),"jQuery"in window&&(window.jQuery.fn.imageMapResize=function(){return this.filter("map").each(r).end()})}();
 
 //# sourceMappingURL=imageMapResizer.map
+
+function openModal(content) {
+    var modal = document.getElementById('myModal');
+    var modalText = document.getElementById('modalText');
+    modal.style.display = 'block';
+    modalText.innerHTML = content;
+}
+  
+  function closeModal() {
+    var modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+}
