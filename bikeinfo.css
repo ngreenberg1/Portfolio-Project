@@ -190,21 +190,6 @@ figcaption {
     position: relative;
 }
 
-  /* Close button style */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 @media screen and (max-width: 800px) {
     .header-container {
         margin-top: 0px;
