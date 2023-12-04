@@ -46,10 +46,6 @@ section {
     text-shadow: 1px 1px 4px #000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
-
-.header-container:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-}
   
 .logo {
     display: flex;
@@ -58,16 +54,20 @@ section {
     font-size: clamp(1rem, 1.75vw, 1.15rem);
     padding: 18px;
     padding-left: 15px;
+    color: white;
 }
 
-  
+.logo:hover {   
+    text-shadow: none;
+}
+
 /* Styles for the logo and subtitle */
 .logo h1,
 .logo h2 {
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
-    color: white;
+    
   
 }
 
@@ -83,11 +83,6 @@ section {
 .logo h2 {
     margin-top: 2px;
     font-size: 70%
-}
-  
-.logo:hover {
-    color: black;   
-    text-shadow: none;
 }
 
 .topnav {
@@ -319,7 +314,8 @@ section {
     }
 
     .topnav.responsive a:hover {
-        background-color: aqua;
+        background-color: #ddd;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     }
     
 }
