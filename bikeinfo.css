@@ -193,7 +193,16 @@ figcaption {
     position: relative;
     display:flex;
     flex-direction: column;
+    overflow: hidden;
 }
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+  
 
 @media screen and (max-width: 800px) {
     .header-container {
