@@ -53,8 +53,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const modals = document.querySelectorAll('.modal');
 
     areas.forEach(function(area, index) {
-        area.addEventListener('mouseover', function() {
-            modals[index].style.display = 'block';
+        area.addEventListener('mouseover', function(event) {
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+            const modal = modals[index];
+
+            const modalWidth = modal.offsetWidth;
+            const modalHeight = modal.offsetHeight;
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+
+            let modalX = mouseX + 200;
+            let modalY = mouseY + 100;
+
+            if (modalX + modalWidth > viewportWidth) {
+                modalX = mouseX - modalWidth - 200; // Position to the left of the mouse
+            }
+
+            // Check if the modal overflows below the viewport
+            if (modalY + modalHeight > viewportHeight) {
+                modalY = mouseY - modalHeight - 200; // Position above the mouse
+            }
+
+
+            modal.style.display = 'flex';
+            modal.style.left = modalX + 'px';
+            modal.style.top = modalY + 'px';
         });
 
         area.addEventListener('mouseout', function() {
