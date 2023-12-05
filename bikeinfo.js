@@ -57,18 +57,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     areas.forEach(function(area, index) {
         area.addEventListener('mouseover', function(event) {
+            // get the current mouse coordinates
             const mouseX = event.clientX;
             const mouseY = event.clientY;
+
+            //get the modal element associated with the current area
             const modal = modals[index];
 
+            // get dimensions of the modal, viewport width, and height
             const modalWidth = modal.offsetWidth;
             const modalHeight = modal.offsetHeight;
             const viewportWidth = window.innerWidth;
             const viewportHeight = window.innerHeight;
 
+            //set inital positions for the modal
             let modalX = mouseX + 200;
             let modalY = mouseY + 100;
 
+            //check if the modal overflows to the right of the viewport
             if (modalX + modalWidth > viewportWidth) {
                 modalX = mouseX - modalWidth - 200; // Position to the left of the mouse
             }
@@ -78,12 +84,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 modalY = mouseY - modalHeight - 200; // Position above the mouse
             }
 
-
+            //display the modal and set its position
             modal.style.display = 'flex';
             modal.style.left = modalX + 'px';
             modal.style.top = modalY + 'px';
         });
 
+        //hide the modal when the mouse moves out of the area
         area.addEventListener('mouseout', function() {
             modals[index].style.display = 'none';
         });
