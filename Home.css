@@ -21,21 +21,23 @@ section {
 }
 
 .one {
-    background-color: rgb(36, 164, 138)
+    background-color: rgb(67, 91, 175);
+    overflow-y: scroll;
 }
 
 .two {
-    background-color: rgb(211, 79, 79);
-
+    background-color: rgb(67, 91, 175);
+    overflow-y: scroll;
 }
 
 .three {
     background-color: rgb(67, 91, 175);
-    
+    overflow-y: scroll;
 }
 
 .four {
-    background-color: rgb(191, 64, 191);
+    background-color: rgb(67, 91, 175);
+    overflow-y: scroll;
     
 }
 
@@ -169,14 +171,7 @@ section {
     display: flex;
     align-items: center;
 }
-
-.main-content {
-    display: flex;
-    justify-content: center; /* Horizontally center content */
-    align-items: center; /* Vertically center content */
-    height: 100vh;
-    margin-top: -80px;
-}   
+ 
 
 .profile-container {
     
@@ -184,14 +179,21 @@ section {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    overflow: auto;
+    width: 100%;
+    height: auto;
 }
 
 .image-container img {
     width: 100%; /* Adjust the initial width as per your design */
-    max-width: 1000px; /* Set a maximum width to maintain clarity on larger screens */
+    min-width: 500px; /* Set a maximum width to maintain clarity on larger screens */
     margin-left: -40px;
     display: block;
     margin-bottom: 15px;
+}
+
+.education-list {
+    margin-top: 40px;
 }
 
 .education-list ul{
@@ -216,14 +218,14 @@ section {
     margin-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
     margin-right: 10px;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .education-list li a{
     color: black;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 20px;
     margin-right: 10px;
     margin-bottom: 20px;
 }
@@ -233,14 +235,14 @@ section {
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
     margin-right: 10px;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .interests-list li {
     color: black;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 20px;
     margin-left: 15px;
     margin-top: 10px;
     margin-right: 10px;
@@ -259,14 +261,17 @@ section {
     margin-right: 20px; /* Adjust spacing between image and content */
     text-align: center;
     align-items: center;
+    width: 100%;
+    height: auto;
 }
 
 .additional-content {
     display: flex;
     flex-direction: column;
     order: 2;
-    font-size: 14px;
-    margin-bottom: 50px;
+    font-size: 20px;
+    overflow-y: auto;
+    margin-bottom: 40px;
 }
 
 .three main {
@@ -296,7 +301,7 @@ section {
 
     .image-content {
         order: 2; /* Change order for larger screens */
-        width: 80%; /* Adjust width to place beside additional-content */
+        width: 100%; /* Adjust width to place beside additional-content */
         margin-bottom: 50px;
     }
 
@@ -304,15 +309,11 @@ section {
         order: 1; /* Change order for larger screens */
         width: 50%; /* Adjust width to place beside image-content */
         font-size: 20px;
-        margin-bottom: 0;
+        margin-bottom: 5%;
+        margin-right: 50px;
+        margin-top: 7%;
     }
 
-    .education-list h2,
-    .interests-list h2 {
-        margin-top: 50px;
-        
-    }
-    
 }
 
 .arrows-body {
@@ -325,7 +326,7 @@ section {
 }
 
 .arrow {
-    position: absolute;
+    position: fixed;
     bottom: 50px;
     width: 30px;
     height: 30px;
@@ -453,5 +454,54 @@ section {
     
 }
 
+/* Style for project container */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Responsive grid columns */
+    gap: 20px; /* Adjust the gap between projects */
+    overflow-y: scroll;
+    margin: 10px;
+  }
+  
+  /* Style for each project */
+  .project {
+    border: 1px solid #ccc; /* Add borders or other styles */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in the width */
+    border-radius: 5px;
 
-
+  }
+  
+  /* Style for project images */
+  .project-image img {
+    width: 100%; /* Ensure the image takes full width within its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin-bottom: 10px; /* Adjust spacing between image and buttons */
+  }
+  
+  /* Style for project title */
+  .project h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for project buttons */
+  .project-buttons {
+    display: flex;
+    justify-content: space-around; /* Adjust button alignment */
+  }
+  
+  /* Style for individual buttons */
+  .project-button {
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .project-button:hover {
+    background-color: #2980b9; /* Change color on hover */
+  }
