@@ -214,17 +214,16 @@ figcaption {
     }
     .topnav.responsive {
         position: fixed;
-        width: 100vw;
+        width: 40vw;
         height: 100vh;
         z-index: 9999;
-        background-color: white;
+        background-color: rgba(0, 0, 0, 0.8);
         top: 0;
-        left: 0;
-        color: black;
+        right: 0;
         overflow-y:auto;
         text-shadow: 0px 0px 0px #000;
-        padding-top: 20px;
-        text-align: center;
+        padding-top: 60px;
+        text-align: right;
     }
     /* Hide individual menu items on smaller screens */
     .topnav a, .dropdown .dropbtn {
@@ -232,12 +231,14 @@ figcaption {
       text-shadow: none;
       padding: 10px;
       font-size: 1.2em;
+      text-shadow: 1px 1px 4px #000;
+      color: white;
     }
     /* Show the icon for the menu */
     .topnav a.icon {
-      float: right;
+      float: fixed;
       display: block;
-      top: 0;
+      top: 20px;
       font-size: 2em;
     }
     /* Hide the social media icons initially */
@@ -248,19 +249,22 @@ figcaption {
     .topnav.responsive .social-media-icons {
         display: block;
         margin-top: 10px;
+        color: white;
     }
     /* Positioning of the menu */
     .topnav.responsive .icon {
         position: absolute;
+        display: block;
+        top: 5px;
         right: 0;
-        top: 0;
+        font-size: 2em;
     }
     /* Adjust appearance of menu items */
     .topnav.responsive a {
         float: none;
         display: block;
         text-align: left;
-        color: black;
+        color: white;
         padding: 10px;
         font-size: 1.2em;
         transition: all 0.3s ease;
@@ -272,18 +276,20 @@ figcaption {
     
     .topnav.responsive .dropdown-content {
         position: relative;
-        
+        background-color: rgba(0, 0, 0, 0.8);
+        font-size: 1em;
     }
 
     .topnav.responsive .dropdown .dropbtn {
         display: block;
         width: 100%;
         text-align: left;
-        color: black;
+        color: white;
     }
 
     .topnav.responsive a:hover {
-        background-color: aqua;
+        background-color: #dddddd49;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     }
     
 }
