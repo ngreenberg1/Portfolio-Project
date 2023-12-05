@@ -1,16 +1,14 @@
 //function to toggle menu when hamburger icon is clicked
 function toggleMenu() {
     var menu = document.getElementById("myTopnav");
-    var closeIcon = document.querySelector(".close-icon");
+    var menuIcon = document.querySelector('.icon');
 
     if (menu.className === "topnav") {
       menu.className += " responsive";
-      closeIcon.style.display = "block"; // Show the 'x' icon
-      menuIcon.style.display = "none"; // Hide the hamburger icon
+      menuIcon.innerHTML = "&#10005;"; // Hide the hamburger icon
     } else {
       menu.className = "topnav";
-      closeIcon.style.display = "none"; // Hide the 'x' icon
-      menuIcon.style.display = "block"; // Show the hamburger icon
+      menuIcon.innerHTML= "&#9776;"; // Show the hamburger icon
     }
     
 }
@@ -52,9 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', hideAnimationOnScroll);
 });
 
-//chgeck the height of the content relative to the window 
-//check manjaro website
-//anchor points, eventlistener on the icon at that point 
 
 //smooth scrolling for anchor links
 document.addEventListener("DOMContentLoaded", function() {

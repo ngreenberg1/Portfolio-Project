@@ -45,7 +45,6 @@
                   <a href="#" class="icon-link"><i class="far fa-envelope"></i></a>
                 </div>  
                 <a href="javascript:void(0)" class="icon" onclick="toggleMenu()">&#9776;</a> 
-                <div class="close-icon" onclick="toggleMenu()">X</div> 
             </nav>
           </div>
         </header>
@@ -53,15 +52,32 @@
           <!-- It contains an article -->
           <article>
               <div class="profile-container">
-                <img src="/Users/naomigreenberg/Workspace/COMP424/Portfolio-Project/Images/PortfolioNoBackground.png" alt="me" style="width: 80%;">
-                <h1>Welcome to my profile page!</h1>
-                <p>Scroll down to find out more about me</p>
+                <div class="image-container">
+                  <img src="/Users/naomigreenberg/Workspace/COMP424/Portfolio-Project/Images/PortfolioNoBackground.png" alt="me" style="width: 80%;">
+                  <h1>Welcome to my profile page!</h1>
+                  <p>Scroll down to find out more about me</p>
+                </div>
+                <div class="additional-content">
+                  <div class="education-list">
+                    <h2>Computer Science Student</h2>
+                    <ul>
+                        <li><a href=https://www.luc.edu>Loyola University Chicago</a></li>
+                        <li><a href=https://www.luc.edu/cs>Department of Computer Science</a></li>
+                        <!-- Add more items as needed -->
+                    </ul>
+                  </div>
+                  <div class="interests-list">
+                      <h2>Academic Interests</h2>
+                      <ul>
+                          <li>Machine Learning</li>
+                          <li>Software Development</li>
+                          <li>Philosophy of Artificial Intelligence</li>
+                          <li>Computer Ethics</li>
+                      </ul>
+                  </div>
+                </div>
               </div>
-            <p>
-              
-            </p>
           </article>
-          <!-- the aside content can also be nested within the main content -->
         </main>
         <a href="#about" class="arrow-link">
           <div class="arrows-body">
@@ -70,8 +86,6 @@
             <div class="arrow"></div>
           </div>
         </a>
-          
-      
       </section>
 
 
@@ -105,17 +119,7 @@
             </nav>
           </div>
         </header>
-        <aside class="side-content">
-          <h2>Interests/What I'm Reading</h2>
-
-          <ul>
-            <li><a href= "Hobby.html">Rock Climbing</a></li>
-            <li><a href="https://bookshop.org/search?keywords=in+the+presence+of+absence" target="_blank"><cite>In the Presence of Absence</cite> by Mahmoud Darwish</a></li>
-            <li><a href="https://www.pilsencommunitybooks.com/item/rBSsMLeAZlZgLaHbv2BzYg" target="_blank"><cite>The Body Keeps The Score</cite> by Bessel Van Der Kolk, M.D.</a></li>
-            <li><a href="https://www.pilsencommunitybooks.com/item/9JsuMsJ9TCIH26oKP3B_Gw" target="_blank"><cite>How to Do Nothing: Resisting the Attention Economy</cite> by Jenny Odell</a></li>
-            <li><a href="https://www.pilsencommunitybooks.com/item/tUmOish_vI_bnz8l9p6Ymg" target="_blank">Cooking</a></li>
-          </ul>   
-        </aside>
+      
         <a href="#resume" class="arrow-link">
           <div class="arrows-body">
             <div class="arrow"></div>
@@ -124,6 +128,7 @@
           </div>
         </a>
       </section>
+
       <section class="three" id="resume">
         <header>
           <div class="header-container">
@@ -154,6 +159,11 @@
             </nav>
           </div>
         </header>
+        <main>
+          <div class="resume-container">
+            <embed src="/Users/naomigreenberg/Workspace/COMP424/Portfolio-Project/Images/generic_resume.pdf" type="application/pdf"/>
+          </div>
+        </main>
         <a href="#projects" class="arrow-link">
           <div class="arrows-body">
             <div class="arrow"></div>
@@ -162,6 +172,7 @@
           </div>
         </a>
       </section>
+
       <section class="four" id="projects">
         <header>
           <div class="header-container">
