@@ -76,12 +76,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             //check if the modal overflows to the right of the viewport
             if (modalX + modalWidth > viewportWidth) {
-                modalX = mouseX - modalWidth - 200; // Position to the left of the mouse
+                modalX = mouseX - modalWidth - 20; // Position to the left of the mouse
             }
 
             // Check if the modal overflows below the viewport
             if (modalY + modalHeight > viewportHeight) {
-                modalY = mouseY - modalHeight - 200; // Position above the mouse
+                modalY = mouseY - modalHeight - 20; // Position above the mouse
             }
 
             //display the modal and set its position
