@@ -21,8 +21,9 @@ function closeMenu() {
     }
 }
 
-
-
+//FIXME (this function doesn't do anything)
+//either make it work with the arrows so that the arrow links to the correct section based on current section, or remove it
+//potential thought: change the inner html based on the current section, so that the href links to the appropriate next page
 document.addEventListener('DOMContentLoaded', function() {
   var animation = document.querySelector('.scrolldown');
 

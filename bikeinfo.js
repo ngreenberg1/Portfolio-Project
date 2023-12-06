@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const areas = document.querySelectorAll('map[name="image-map"] area');
     const modals = document.querySelectorAll('.modal');
 
+    //#FIXME
     areas.forEach(function(area, index) {
         area.addEventListener('mouseover', function(event) {
             // get the current mouse coordinates
