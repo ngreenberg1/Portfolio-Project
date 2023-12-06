@@ -1,25 +1,32 @@
+
+/* Reset default margin, padding and box sizing for all elements */
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /*dimensions of the element are calculated as width = border + padding + width of the content.  Same for height.*/
 }
 
+/*reset margin and padding for the body element */
 body {
     margin:0;
     padding: 0;
 }
 
+/*styles for the container which contains all of the 4 sections */
 .container {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
-    height: 100vh;
+    height: 100vh; /*have to set this to 100vh to make the sections snap into view*/
 }
+
+/* styles for sections */
 section {
-    height: 100vh;
+    height: 100vh; /* each section takes up the viewport height */
     scroll-snap-align: start;
     position: relative;
 }
 
+/*styles for individual sections*/
 .one {
     background-color: rgb(67, 91, 175);
     overflow-y: scroll;
@@ -40,15 +47,20 @@ section {
     overflow-y: scroll;
     
 }
-
+  
+/*Styles for the header container. Applies to all the sections*/
 .header-container {
+    /*flexible layout and spacing*/
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /*items will have space between them */
     text-shadow: 1px 1px 4px #000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
-  
+
+/* styles for logo */
+/* logo is in its own container within the header container, so that space between 
+puts logo on one side and top nav on other.*/
 .logo {
     display: flex;
     flex-direction: column;
@@ -59,6 +71,9 @@ section {
     color: white;
 }
 
+/*something weird is going on with the logo styling and I couln't get both parts of the logo 
+to turn black on hover, synchronously, so I set the shadow to disappear on hover, to make it more obvious
+that it is a clickable link to the home page*/
 .logo:hover {   
     text-shadow: none;
 }
@@ -73,52 +88,57 @@ section {
   
 }
 
+/*targets the name part of the logo*/
 .logo h1 a{
     text-decoration: none;
     white-space: nowrap;
     color: white;
+    
 }
-
-
-  
+ 
 /* Adjust spacing between logo and subtitle */
+/*targets the subtitle*/
 .logo h2 {
     margin-top: 2px;
     font-size: 70%
 }
 
+/*Styles for the nav bar*/
 .topnav {
-    overflow: hidden;
-    margin-top: -6px;
+    overflow: hidden; /*hides any content that overflows its container */
+    margin-top: -6px; /* Adjust the top margin of the navigation*/ 
     padding: 0;
-    text-shadow: 1px 1px 4px #000;
+    text-shadow: 1px 1px 4px #000; /*Adds a shadow effect to the text*/
 
 }
 
-
+/* Styles for the links within the top navigation */
 .topnav a {
-    float: left;
-    display: block;
+    float: left; /*floats the links to the left of their container*/
+    display: block; /*takes up the full width available*/
     color: white;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    padding: 14px 16px; /*top padding, right padding*/
+    text-decoration: none; /*remove underlines */
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-}
-  
-.topnav .icon {
-    display: none;
-    font-size: 40px;
+    font-weight: 600; /*set the boldness*/
 }
 
+/*Styles for the menu icon*/
+.topnav .icon {
+    display: none; /*icon initially hidden*/
+    font-size: 40px; /*size of the icon*/
+}
+
+/*Styles for the dropdown menu -- the projects drop down, not the responsive menu*/
 .dropdown {
-    float: left;
+    float: left; /* Floats the dropdown to the left */
     overflow: hidden;
 
 }
-  
+
+/*Styles for the project button*/
 .dropdown .dropbtn {
     font-size: 15px;    
     border: none;
@@ -131,9 +151,10 @@ section {
     margin: 0;
     text-shadow: 1px 1px 4px #000;
 }
-  
+
+/*Styles for the dropdown content*/  
 .dropdown-content {
-    display: none;
+    display: none; /*initially hidden*/
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
@@ -141,9 +162,10 @@ section {
     z-index: 1;  
     
 }
-  
+
+/* Styles for the dropdown content links*/
 .dropdown-content a {
-    float: none;
+    float: none; 
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -152,52 +174,59 @@ section {
     text-shadow: none;
 }
   
-
+/* Styles for hover effects */
 .topnav a:hover, .dropdown:hover .dropbtn {
-    color: black;
+    color: black; 
     text-shadow: none;
 }
-  
+
+/*styles for dropdown links on hover*/
 .dropdown-content a:hover {
     background-color: #ddd;
     color: black;
 }
-  
+
+/*on button hover, display dropdown content*/
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
+/*styles for social media icons*/
 .social-media-icons {
-    display: flex;
+    display: flex; 
     align-items: center;
 }
  
-
+/*Styles for the main profile container, which contains image container and additional content*/
 .profile-container {
     
-    display: flex;
-    flex-direction: column;
+    display: flex; /*use flexbox for responsive layout*/
+    flex-direction: column; 
     align-items: center;
     text-align: center;
     overflow: auto;
     width: 100%;
-    height: auto;
+    height: auto; /*alows container to adjust its height based on content*/
 }
 
 .image-container img {
-    width: 100%; 
+    /*Styles for the profile image*/
+    /* even though image background is removed, image dimensions include background*/
+    width: 100%; /* sets image width to fill its container */
     min-width: 500px; /* Set a minimum width, so the image doesn't get too small on smaller screens */
-    margin-left: -40px;
-    display: block;
-    margin-bottom: 15px;
+    margin-left: -40px; /* adjusts left margin of image to center it with text below*/
+    display: block; 
+    margin-bottom: 15px; /*add margin at the bottom of image to create distance from text*/
 }
 
+/* Styles for the education list */
 .education-list {
-    margin-top: 40px;
+    margin-top: 40px; /* create space from top of container */
 }
 
 .education-list ul{
-    list-style: none;
+    /* Styles for the list elements*/
+    list-style: none; /*remove underline*/
     padding-left: 0;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
@@ -206,11 +235,12 @@ section {
 
 .education-list ul li a {
     display: block;
-    margin-bottom: 10px; 
+    margin-bottom: 10px; /*create space between links*/
 }
 
 .education-list h2,
 .interests-list h2 {
+    /* common styles for list headings*/
     font-weight: bold; 
     margin-bottom: 10px; 
     color: black; 
@@ -222,6 +252,7 @@ section {
 }
 
 .education-list li a{
+    /* Styles for links within the education list*/
     color: black;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
@@ -230,7 +261,7 @@ section {
     margin-bottom: 20px;
 }
 
-/* Styling for the second */
+/* Styling for the second list */
 .interests-list ul {
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
@@ -250,12 +281,7 @@ section {
 
 }
 
-/* Adjustments for layout */
-.profile-container {
-    display: flex;
-    flex-direction: column; 
-}
-
+/* Styles for image container, which contains image and text*/
 .image-container {
     display: flex;
     flex-direction: column;
@@ -266,15 +292,17 @@ section {
     height: auto;
 }
 
+
 .additional-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /**/
     order: 2;
     font-size: 20px;
     overflow-y: auto;
     margin-bottom: 40px;
 }
 
+/* target main container within section 3*/
 .three main {
     display: flex;
     flex-direction: column;
