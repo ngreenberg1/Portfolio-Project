@@ -302,7 +302,7 @@ that it is a clickable link to the home page*/
     margin-bottom: 40px;
 }
 
-/* target main container within section 3*/
+/* targets main container within section 3*/
 .three main {
     display: flex;
     flex-direction: column;
@@ -311,6 +311,7 @@ that it is a clickable link to the home page*/
     align-items: center;
 }
 
+/**/
 .resume-container {
     width: 80%;
     height: 100%;
