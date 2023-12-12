@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    overflow-x: auto; /* x axis scrolling */
+    overflow-y: hidden;
+}
+
+/*create a semi-transparent overlay covering the entire viewport */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.image-bar {
+    display: flex;
+    overflow-x: auto; /* x axis scrolling */
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.image-bar img {
+    max-height: 200px;
+    width: auto;
+    object-fit: cover;
+    margin-right: 20px;
+    transition: transform 0.3s;
+    position: relative;
+}
+/*hover effect*/
+.image-bar img:hover {
+    transform: scale(1.1);
+}
