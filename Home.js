@@ -125,3 +125,5 @@ function showSlides(n) {
 document.addEventListener("DOMContentLoaded", function() {
   observer.observe(slides[0]); // Assuming the first slide is initially in the viewport
 });
+
+

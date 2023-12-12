@@ -475,13 +475,15 @@ that it is a clickable link to the home page*/
 
 }
 
+
 .arrows-body {
    display: flex;
    flex-direction: column;
-   justify-content: center;
    align-items: center;
    margin-bottom: 5%;
-   
+   position: fixed;
+   left: 50%;
+   bottom: 0
 }
 
 .arrow {
@@ -494,6 +496,12 @@ that it is a clickable link to the home page*/
     transform: rotate(45deg);
     margin: -5px;
     animation: scroll 1.5s infinite;
+}
+
+.scroll-text {
+    font-size: 14px; /* Adjust font size as needed */
+    color: white; /* Text color */
+    margin-top: 5px; /* Adjust spacing from arrows */
 }
 
 .arrow:nth-child(2) {

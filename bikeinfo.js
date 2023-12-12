@@ -49,59 +49,49 @@ function closeMenu() {
             (e),r.call(e),n.push(e))}var n;return function(e){switch(n=[],typeof e){case"undefined":case"string":Array.prototype.forEach.call(document.querySelectorAll(e||"map"),t);
             break;case"object":t(e);break;default:throw new TypeError("Unexpected data type ("+typeof e+").")}return n}}"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&"object"==typeof module.exports?module.exports=e():window.imageMapResize=e(),"jQuery"in window&&(window.jQuery.fn.imageMapResize=function(){return this.filter("map").each(r).end()})}();
 
-//# sourceMappingURL=imageMapResizer.map
 document.addEventListener('DOMContentLoaded', function() {
     const areas = document.querySelectorAll('map[name="image-map"] area');
     const modals = document.querySelectorAll('.modal');
 
-    function positionModal(modal, mouseX, mouseY) {
-        const modalWidth = modal.offsetWidth;
-        const modalHeight = modal.offsetHeight;
-        const viewportWidth = document.documentElement.clientWidth;
-        const viewportHeight = document.documentElement.clientHeight;
-
-        // Start with the modal above and to the left of the cursor
-        let modalX = mouseX - modalWidth;
-        let modalY = mouseY - modalHeight;
-
-        // Adjust for right overflow
-        if (modalX + modalWidth > viewportWidth) {
-            modalX = viewportWidth - modalWidth;
-        }
-
-        // Adjust for left overflow
-        if (modalX < 0) {
-            modalX = 0;
-        }
-
-        // Adjust for bottom overflow
-        if (modalY + modalHeight > viewportHeight) {
-            modalY = viewportHeight - modalHeight;
-        }
-
-        // Adjust for top overflow
-        if (modalY < 0) {
-            modalY = 0;
-        }
-
-        modal.style.display = 'flex';
-        modal.style.left = modalX + 'px';
-        modal.style.top = modalY + 'px';
-    }
-
     areas.forEach(function(area, index) {
         area.addEventListener('mouseover', function(event) {
+            // get the current mouse coordinates
             const mouseX = event.clientX;
             const mouseY = event.clientY;
 
-            positionModal(modals[index], mouseX, mouseY);
+            //get the modal element associated with the current area
+            const modal = modals[index];
+
+            // get dimensions of the modal, viewport width, and height
+            const modalWidth = modal.offsetWidth;
+            const modalHeight = modal.offsetHeight;
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+
+            //set inital positions for the modal
+            let modalX = mouseX + 200;
+            let modalY = mouseY + 100;
+
+            //check if the modal overflows to the right of the viewport
+            if (modalX + modalWidth > viewportWidth) {
+                modalX = mouseX - modalWidth - 20; // Position to the left of the mouse
+            }
+
+            // Check if the modal overflows below the viewport
+            if (modalY + modalHeight > viewportHeight) {
+                modalY = mouseY - modalHeight - 20; // Position above the mouse
+            }
+
+            //display the modal and set its position
+            modal.style.display = 'flex';
+            modal.style.left = modalX + 'px';
+            modal.style.top = modalY + 'px';
         });
 
+        //hide the modal when the mouse moves out of the area
         area.addEventListener('mouseout', function() {
             modals[index].style.display = 'none';
         });
     });
 });
-
-
 
