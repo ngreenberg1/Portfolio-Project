@@ -57,31 +57,31 @@ document.addEventListener('DOMContentLoaded', function() {
     function positionModal(modal, mouseX, mouseY) {
         const modalWidth = modal.offsetWidth;
         const modalHeight = modal.offsetHeight;
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
-        const offset = 20; // Adjust this value for desired offset from the mouse cursor
+        const viewportWidth = document.documentElement.clientWidth;
+        const viewportHeight = document.documentElement.clientHeight;
 
-        let modalX = mouseX + offset;
-        let modalY = mouseY + offset;
+        // Start with the modal above and to the left of the cursor
+        let modalX = mouseX - modalWidth;
+        let modalY = mouseY - modalHeight;
 
-        // Check if the modal overflows to the right of the viewport
+        // Adjust for right overflow
         if (modalX + modalWidth > viewportWidth) {
-            modalX = mouseX - modalWidth - offset;
+            modalX = viewportWidth - modalWidth;
         }
 
-        // Check if the modal overflows below the viewport
-        if (modalY + modalHeight > viewportHeight) {
-            modalY = mouseY - modalHeight - offset;
-        }
-
-        // Check if the modal overflows to the left of the viewport
+        // Adjust for left overflow
         if (modalX < 0) {
-            modalX = mouseX + offset;
+            modalX = 0;
         }
 
-        // Check if the modal overflows above the viewport
+        // Adjust for bottom overflow
+        if (modalY + modalHeight > viewportHeight) {
+            modalY = viewportHeight - modalHeight;
+        }
+
+        // Adjust for top overflow
         if (modalY < 0) {
-            modalY = mouseY + offset;
+            modalY = 0;
         }
 
         modal.style.display = 'flex';
